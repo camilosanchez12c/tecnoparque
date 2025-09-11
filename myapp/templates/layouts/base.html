@@ -1,0 +1,26 @@
+
+<nav>
+    <ul>
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'projects' %}">Projects</a>
+        </li>
+        <li>
+            <!--  Usar el name de la url -->
+            <a href="{% url 'tasks' %}">Tasks</a>
+        </li>
+            <li>
+            <a href="{% url 'about' %}">About</a>
+        </li>
+        </li>
+            <li>
+            <a href="{% url 'create_task' %}">create_task</a>
+        </li>
+    </ul>
+</nav>
+{% block content %}
+
+{% endblock %}
+

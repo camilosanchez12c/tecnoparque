@@ -1,0 +1,44 @@
+
+{% extends 'layouts/base.html' %}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TASKS</h1>
+    <p>se esta usando el archivo tasks.html</p>
+     <h1>Bucle for mostrar valores de tasks:</h1>
+
+{% for task in tasks %}
+    <div>
+        <!--esto no mas es un comentario -->
+        {# note: esta es una tarjeta #}
+        <h2>
+            {% if not task.done %}
+                ⏰ {{ task.title }}
+            {% else %}
+                ✓ {{ task.title }}
+            {% endif %}
+        </h2>
+
+        {% if not task.done %}
+            <p>TAREA PENDIENTE</p>
+        {% else %}
+            <p>TAREA REALIZADA</p>
+        {% endif %}
+
+        <p>Descripción: {{ task.description }}</p>
+        <p>Proyecto: {{ task.project.name }}</p>
+
+        
+    </div>
+{% endfor %}
+
+</body>
+</html>
+
+{% endblock%}

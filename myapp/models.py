@@ -1,11 +1,16 @@
 from django.db import models
 
-#esta parte es para la crecacion de las tablas en la base de datos 
 class Project(models.Model):
-    name=models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
 
 class Task(models.Model):
-    title=models.CharField(max_length=200)
-    description=models.TextField()
-    project=models.ForeignKey(Project,on_delete=models.CASCADE)#con el foreignkey esto es para hacer la relacion con la otra tabla de project
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    done = models.BooleanField(default=False)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)  #  relación con Project
+
+    def __str__(self):
+        return self.title

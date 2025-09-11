@@ -1,0 +1,32 @@
+
+{% extends 'layouts/base.html' %}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROJECTS</h1>
+    <p>se esta usano el documento de projects.html</p>  
+    <h2>valores de toda la tabla de projects </h2>
+    
+    <h1>bucle for mostrar valores de about:</h1>
+        {% for project in projects %}
+            <!-- usando el campo directamente -->
+            <div>
+                <p>{{ project.name }}</p>
+                <button>
+                    delete
+                </button>
+                <button>
+                    update
+                </button>
+            </div>
+        {% endfor %}
+</body>
+</html>
+{% endblock%}
+
