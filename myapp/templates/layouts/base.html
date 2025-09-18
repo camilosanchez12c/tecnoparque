@@ -1,5 +1,16 @@
+{% load static %}
 
-<nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django project</title>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+    
+<nav class="navbar container">
     <ul>
         <li>
             <a href="/">Home</a>
@@ -17,10 +28,18 @@
         </li>
             <li>
             <a href="{% url 'create_task' %}">create_task</a>
-        </li>
+            </li>
+            <li>
+            <a href="{% url 'create_project' %}">create_project</a>
+            </li>
     </ul>
 </nav>
-{% block content %}
+<main class="container">
 
-{% endblock %}
+    {% block content %}
+    {% endblock %}
+</main>
 
+
+</body>
+</html>

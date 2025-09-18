@@ -15,15 +15,21 @@
     
     <h1>bucle for mostrar valores de about:</h1>
         {% for project in projects %}
+           
             <!-- usando el campo directamente -->
             <div>
-                <p>{{ project.name }}</p>
-                <button>
-                    delete
-                </button>
-                <button>
-                    update
-                </button>
+                <article class="card">
+                    <a href="{% url 'project_detail' project.id %}">
+
+                        <p>{{ project.name }}</p>
+                        <button>
+                            delete
+                        </button>
+                        <button>
+                            update
+                        </a>
+                    </button>
+                </article>
             </div>
         {% endfor %}
 </body>

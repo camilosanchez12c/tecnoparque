@@ -1,6 +1,6 @@
 
 {% extends 'layouts/base.html' %}
-
+{% load static %}
 {% block content %}
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@
 <body>
     <h1>{{title}}</h1>
     <p>lorem30 bueno descripcion con la etiqueta p</p>
+    <img src="{% static 'django.png' %}" alt="">
 </body>
 </html>
 {% endblock %}
